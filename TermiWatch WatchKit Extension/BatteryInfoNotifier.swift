@@ -39,7 +39,7 @@ public class BatteryInfoNotifier {
     return timer != nil && timer!.isValid
   }
 
-  public func start(withTimeInterval interval: TimeInterval = 60) {
+  public func start(withTimeInterval interval: TimeInterval = 600) {
     timer?.invalidate()
 
     timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) {

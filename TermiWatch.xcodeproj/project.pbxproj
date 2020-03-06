@@ -31,6 +31,10 @@
 		5DC87B2522ABBAD5005243D5 /* PMKHealthKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5DC87B2422ABBAD5005243D5 /* PMKHealthKit */; };
 		5DD885B4237743DC003B1A55 /* PMKCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 5DD885B3237743DC003B1A55 /* PMKCoreLocation */; };
 		5DD885B6237743E9003B1A55 /* PMKCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 5DD885B5237743E9003B1A55 /* PMKCoreLocation */; };
+		E64E8E4D23BC9D1E00ADFD26 /* CurrencyNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64E8E4C23BC9D1E00ADFD26 /* CurrencyNotifier.swift */; };
+		E64E8E4F23BCA5E900ADFD26 /* DataNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64E8E4E23BCA5E900ADFD26 /* DataNotifier.swift */; };
+		E6F0710223B9235800AD060E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E6F0710123B9235800AD060E /* Alamofire */; };
+		E6F0710523B92F2600AD060E /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E6F0710423B92F2600AD060E /* SwiftyJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +112,8 @@
 		5D50F69621AA972B00A9E754 /* BatteryInfoNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryInfoNotifier.swift; sourceTree = "<group>"; };
 		5D50F69821AAD6D400A9E754 /* TemperatureNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureNotifier.swift; sourceTree = "<group>"; };
 		5DB67F1E21A3E60C00AFA77A /* HealthKitUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitUtils.swift; sourceTree = "<group>"; };
+		E64E8E4C23BC9D1E00ADFD26 /* CurrencyNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyNotifier.swift; sourceTree = "<group>"; };
+		E64E8E4E23BCA5E900ADFD26 /* DataNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataNotifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +132,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D1B79BE22ABAA0D00EB82EA /* PromiseKit in Frameworks */,
+				E6F0710523B92F2600AD060E /* SwiftyJSON in Frameworks */,
 				5DD885B6237743E9003B1A55 /* PMKCoreLocation in Frameworks */,
 				5DC87B2522ABBAD5005243D5 /* PMKHealthKit in Frameworks */,
+				E6F0710223B9235800AD060E /* Alamofire in Frameworks */,
 				5D1B79C122ABAA2300EB82EA /* PMKFoundation in Frameworks */,
 				5D8BEA7323AEE0000096F314 /* Swizzle in Frameworks */,
 			);
@@ -188,8 +196,10 @@
 				5D3E856B21A0288700FA946B /* TermiWatch WatchKit Extension.entitlements */,
 				5D50F69621AA972B00A9E754 /* BatteryInfoNotifier.swift */,
 				5D3E855121A0246E00FA946B /* ExtensionDelegate.swift */,
+				E64E8E4E23BCA5E900ADFD26 /* DataNotifier.swift */,
 				5DB67F1E21A3E60C00AFA77A /* HealthKitUtils.swift */,
 				5D3E854F21A0246E00FA946B /* InterfaceController.swift */,
+				E64E8E4C23BC9D1E00ADFD26 /* CurrencyNotifier.swift */,
 				5D50F69821AAD6D400A9E754 /* TemperatureNotifier.swift */,
 				5D3E855321A0246F00FA946B /* Assets.xcassets */,
 				5D3E855521A0246F00FA946B /* Info.plist */,
@@ -268,6 +278,8 @@
 				5DC87B2422ABBAD5005243D5 /* PMKHealthKit */,
 				5DD885B5237743E9003B1A55 /* PMKCoreLocation */,
 				5D8BEA7223AEE0000096F314 /* Swizzle */,
+				E6F0710123B9235800AD060E /* Alamofire */,
+				E6F0710423B92F2600AD060E /* SwiftyJSON */,
 			);
 			productName = "TerminalWatchFace WatchKit Extension";
 			productReference = 5D3E854A21A0246E00FA946B /* TermiWatch WatchKit Extension.appex */;
@@ -319,6 +331,8 @@
 				5DC87B2122ABBACD005243D5 /* XCRemoteSwiftPackageReference "PMKHealthKit" */,
 				5DD885B2237743DC003B1A55 /* XCRemoteSwiftPackageReference "CoreLocation" */,
 				5D8BEA6F23AEDFE60096F314 /* XCRemoteSwiftPackageReference "Swizzle" */,
+				E6F0710023B9235800AD060E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E6F0710323B92F2600AD060E /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 5D3E852A21A0246C00FA946B /* Products */;
 			projectDirPath = "";
@@ -377,9 +391,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D50F69721AA972B00A9E754 /* BatteryInfoNotifier.swift in Sources */,
+				E64E8E4F23BCA5E900ADFD26 /* DataNotifier.swift in Sources */,
 				5D3E855221A0246E00FA946B /* ExtensionDelegate.swift in Sources */,
 				5DB67F1F21A3E60C00AFA77A /* HealthKitUtils.swift in Sources */,
 				5D50F69921AAD6D400A9E754 /* TemperatureNotifier.swift in Sources */,
+				E64E8E4D23BC9D1E00ADFD26 /* CurrencyNotifier.swift in Sources */,
 				5D3E855021A0246E00FA946B /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,9 +475,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = UNBDR5K4CU;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -478,7 +496,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -520,9 +538,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = UNBDR5K4CU;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -533,7 +553,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -551,7 +571,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = C89KNBM28S;
+				DEVELOPMENT_TEAM = W24CQ87VD5;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/TermiWatch WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -559,7 +579,8 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kuglee.TermiWatch.watchkitapp.watchkitextension;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eralpsahin.TermiWatch.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -578,7 +599,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = C89KNBM28S;
+				DEVELOPMENT_TEAM = W24CQ87VD5;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/TermiWatch WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -586,7 +607,8 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kuglee.TermiWatch.watchkitapp.watchkitextension;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eralpsahin.TermiWatch.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -605,10 +627,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = C89KNBM28S;
+				DEVELOPMENT_TEAM = W24CQ87VD5;
 				IBSC_MODULE = TerminalWatchFace_WatchKit_Extension;
 				INFOPLIST_FILE = "$(SRCROOT)/TermiWatch WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kuglee.TermiWatch.watchkitapp;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eralpsahin.TermiWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -627,10 +650,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = C89KNBM28S;
+				DEVELOPMENT_TEAM = W24CQ87VD5;
 				IBSC_MODULE = TerminalWatchFace_WatchKit_Extension;
 				INFOPLIST_FILE = "$(SRCROOT)/TermiWatch WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kuglee.TermiWatch.watchkitapp;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eralpsahin.TermiWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -649,14 +673,15 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = C89KNBM28S;
+				DEVELOPMENT_TEAM = W24CQ87VD5;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/TermiWatch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kuglee.TermiWatch;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eralpsahin.TermiWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -672,14 +697,15 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = C89KNBM28S;
+				DEVELOPMENT_TEAM = W24CQ87VD5;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/TermiWatch/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kuglee.TermiWatch;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eralpsahin.TermiWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -769,6 +795,22 @@
 				minimumVersion = 3.1.0;
 			};
 		};
+		E6F0710023B9235800AD060E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.9.1;
+			};
+		};
+		E6F0710323B92F2600AD060E /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -811,6 +853,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5DD885B2237743DC003B1A55 /* XCRemoteSwiftPackageReference "CoreLocation" */;
 			productName = PMKCoreLocation;
+		};
+		E6F0710123B9235800AD060E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6F0710023B9235800AD060E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		E6F0710423B92F2600AD060E /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6F0710323B92F2600AD060E /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

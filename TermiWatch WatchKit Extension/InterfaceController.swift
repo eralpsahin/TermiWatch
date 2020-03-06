@@ -141,17 +141,17 @@ let localizedTemperatureStyle: (MeasurementFormatter) -> Void = {
 
 func progressBarString(percent: UInt, steps: UInt) -> String? {
   let fillCount = Int((Float(steps) * (Float(percent) / 100.0)).rounded())
-  let full = String(repeating: "#", count: fillCount)
-  let empty = String(repeating: ".", count: Int(steps) - fillCount)
+  let full = String(repeating: "█", count: fillCount)
+  let empty = String(repeating: "░", count: Int(steps) - fillCount)
 
-  return "[\(full + empty)]"
+  return "\(full + empty)"
 }
 
 func batteryIndicatorString(percent: UInt) -> String {
   let percentString = "\(percent)%"
 
-  if let batteryIndicator = progressBarString(percent: percent, steps: 5) {
-    return ("\(batteryIndicator) \(percentString)")
+  if let batteryIndicator = progressBarString(percent: percent, steps: 10) {
+    return ("\(batteryIndicator)\(percentString)")
   }
 
   return percentString
@@ -163,7 +163,11 @@ class InterfaceController: WKInterfaceController {
   @IBOutlet var stepsLabel: WKInterfaceLabel!
   @IBOutlet var heartRateLabel: WKInterfaceLabel!
   @IBOutlet var temperatureLabel: WKInterfaceLabel!
-
+  @IBOutlet var currencyLabel: WKInterfaceLabel!
+  @IBOutlet var DataLabel: WKInterfaceLabel!
+  @IBOutlet var locLabel: WKInterfaceLabel!
+  @IBOutlet var weatherIconImage: WKInterfaceImage!
+    
   override func awake(withContext context: Any?) {
     super.awake(withContext: context)
 
@@ -180,16 +184,48 @@ class InterfaceController: WKInterfaceController {
         object: nil,
         queue: nil
       ) { [weak self] notification in
-        let temperature = notification.object as! Measurement<UnitTemperature>
+        let obj = notification.object as! [String: Any]
+        let temperature = obj["temp"] as! Measurement<UnitTemperature>
         self?.temperatureLabel.setText(
           temperatureFormatter.string(from: temperature)
         )
+        self?.locLabel.setText((obj["name"] as! String))
+        if #available(watchOSApplicationExtension 6.0, *) {
+            self?.weatherIconImage.setImage(UIImage(systemName: obj["icon"] as! String))
+        } else {
+            // Fallback on earlier versions
+        }
       }
 
       TemperatureNotifier.shared.start()
     }.catch {
       print("Error:", $0)
     }
+    
+    // MARK: - Currency
+
+      NotificationCenter.default.addObserver(
+        forName: CurrencyNotifier.CurrencyDidChangeNotification,
+        object: nil,
+        queue: nil
+      ) { [weak self] notification in
+        let currency = notification.object as! String
+        self?.currencyLabel.setText(String(format: currency + " USD/TRY"))
+      }
+      CurrencyNotifier.shared.start()
+      
+      
+    // MARK: - Data
+
+         NotificationCenter.default.addObserver(
+           forName: DataNotifier.DataDidChangeNotification,
+           object: nil,
+           queue: nil
+         ) { [weak self] notification in
+           let remaining = notification.object as! Double
+           self?.DataLabel.setText(String(format: "%.2f GB", remaining / 1000))
+         }
+         DataNotifier.shared.start()
 
     // MARK: - Health
 
@@ -240,7 +276,7 @@ class InterfaceController: WKInterfaceController {
         healthStore: healthStore
       ) { [weak self] in
 
-        self?.stepsLabel.setText("\(Int($0)) steps")
+        self?.stepsLabel.setText("\(Int($0))")
       }
 
       subscribeToQuantityType(
